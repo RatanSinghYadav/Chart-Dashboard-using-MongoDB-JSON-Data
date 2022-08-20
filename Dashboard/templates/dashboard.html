@@ -1,0 +1,143 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport"content="width=device-width,intial-scale-1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Dashboard</title>
+
+
+
+</head>
+<body>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <div class="mx-auto text-center">
+              <h1> Chart Dashboard </h1>
+        </div>
+
+
+     <div class=" row mx-auto ">
+      <div class="col-md-6">
+      <div class="card row mx-auto">
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <div role="group" class="btn-group">
+              <button type="button"class="btn btn-outline-primary"style="position: relative;"><b>Source</b></button>
+              <button type="button"class="btn btn-outline-primary"style="position: relative;"><b>Secotor</b></button>
+              <button type="button"class="btn btn-outline-primary"style="position: relative;"><b>Region</b></button>
+          </div>
+          </div>
+    <div class="card mx-auto chartbox">
+  <canvas id="myChart" width="300" height="300"></canvas>
+
+
+    </div>
+
+
+
+  <div class="  card mx-auto chartbox1">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <div role="group" class="btn-group">
+              <button type="button"class="btn btn-outline-primary"style="position: relative;"><b>Country</b></button>
+              <button type="button"class="btn btn-outline-primary"style="position: relative;"><b>SWOT</b></button>
+              <button type="button"class="btn btn-outline-primary"style="position: relative;"><b>City</b></button>
+          </div>
+          </div>
+  <canvas id="myChart1" width="300" height="300"></canvas>
+
+  </div>
+
+
+
+  <script>
+
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+          labels: ['Intensity', 'Likelihood', 'Relevance', 'Year', 'Country', 'Topics','Region','City'],
+          datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          responsive: false,
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+
+  const ctx1 = document.getElementById('myChart1').getContext('2d');
+  const myChart1 = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+          labels: ['Intensity', 'Likelihood', 'Relevance', 'Year', 'Country', 'Topics','Region','City'],
+          datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          responsive: false,
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+  </script>
+
+</div>
+      </div>
+      </div>
+
+</body>
+</html>
